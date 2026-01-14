@@ -1,0 +1,221 @@
+'use client';
+
+import Link from 'next/link';
+import Icon from '../ui/AppIcon';
+
+interface FooterLink {
+  name: string;
+  href: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const footerSections: FooterSection[] = [
+    {
+      title: 'Company',
+      links: [
+        { name: 'About Us', href: '/about' },
+        { name: 'Our Services', href: '/services' },
+        { name: 'Projects', href: '/projects' },
+        { name: 'Get Quote', href: '/get-quote' },
+      ],
+    },
+    {
+      title: 'Services',
+      links: [
+        { name: 'Commercial Construction', href: '/services#commercial' },
+        { name: 'Residential Projects', href: '/services#residential' },
+        { name: 'Mining Infrastructure', href: '/services#mining' },
+        { name: 'Government Contracts', href: '/services#government' },
+      ],
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Client Portal', href: '/client-portal' },
+        { name: 'Project Planning Guide', href: '/resources/planning' },
+        { name: 'Cost Calculator', href: '/resources/calculator' },
+        { name: 'FAQs', href: '/resources/faq' },
+      ],
+    },
+  ];
+
+  const socialLinks = [
+    { name: 'Facebook', icon: 'ShareIcon', href: '#' },
+    { name: 'LinkedIn', icon: 'ShareIcon', href: '#' },
+    { name: 'Twitter', icon: 'ShareIcon', href: '#' },
+    { name: 'Instagram', icon: 'ShareIcon', href: '#' },
+  ];
+
+  const certifications = [
+    'ZIMRA Compliant',
+    'ISO 9001:2015',
+    'Safety Certified',
+    'Licensed Contractor',
+  ];
+
+  return (
+    <footer className="bg-primary text-primary-foreground">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Brand Section */}
+          <div className="lg:col-span-2">
+            <Link href="/homepage" className="inline-flex items-center space-x-3 mb-4 group">
+              <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-full h-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polygon
+                    points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5"
+                    fill="white"
+                    opacity="0.1"
+                  />
+                  <polygon
+                    points="50,15 80,32.5 80,67.5 50,85 20,67.5 20,32.5"
+                    fill="var(--color-accent)"
+                  />
+                  <text
+                    x="50"
+                    y="58"
+                    fontFamily="var(--font-headline)"
+                    fontSize="24"
+                    fontWeight="700"
+                    fill="white"
+                    textAnchor="middle"
+                  >
+                    SNC
+                  </text>
+                </svg>
+              </div>
+              <div>
+                <div className="text-lg font-headline font-bold leading-tight">
+                  Six Nine Construction
+                </div>
+                <div className="text-xs font-mono opacity-80 tracking-wide">
+                  Building Zimbabwe's Future
+                </div>
+              </div>
+            </Link>
+
+            <p className="text-sm opacity-90 mb-4 leading-relaxed">
+              Zimbabwe's premier construction innovator delivering USD 2M+ projects with precision,
+              transparency, and unwavering commitment to excellence since 2015.
+            </p>
+
+            {/* Contact Info */}
+            <div className="space-y-2 text-sm">
+              <a
+                href="tel:+263123456789"
+                className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
+              >
+                <Icon name="PhoneIcon" size={18} />
+                <span>+263 123 456 789</span>
+              </a>
+              <a
+                href="mailto:info@sncconstruction.co.zw"
+                className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
+              >
+                <Icon name="EnvelopeIcon" size={18} />
+                <span>info@sncconstruction.co.zw</span>
+              </a>
+              <div className="flex items-start space-x-2">
+                <Icon name="MapPinIcon" size={18} className="mt-0.5 flex-shrink-0" />
+                <span>123 Construction Avenue, Harare, Zimbabwe</span>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center space-x-3 mt-6">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  className="w-10 h-10 rounded-md bg-white bg-opacity-10 flex items-center justify-center hover:bg-accent transition-all duration-300 hover:scale-110"
+                  aria-label={social.name}
+                >
+                  <Icon name={social.icon as any} size={20} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Footer Links Sections */}
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="text-base font-headline font-semibold mb-4">{section.title}</h3>
+              <ul className="space-y-2">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-sm opacity-90 hover:opacity-100 hover:text-accent transition-all duration-200 inline-block"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Certifications Bar */}
+        <div className="mt-12 pt-8 border-t border-white border-opacity-10">
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            {certifications.map((cert) => (
+              <div
+                key={cert}
+                className="flex items-center space-x-2 px-4 py-2 bg-white bg-opacity-10 rounded-md"
+              >
+                <Icon name="CheckBadgeIcon" size={18} className="text-success" />
+                <span className="text-sm font-medium">{cert}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-white border-opacity-10">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <div className="text-sm opacity-80">
+              © {currentYear} Six Nine Construction. All rights reserved.
+            </div>
+            <div className="flex items-center space-x-6 text-sm">
+              <Link
+                href="/privacy"
+                className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-200"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-200"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/compliance"
+                className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-200"
+              >
+                Compliance
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

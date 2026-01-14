@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #004369; /* Deep Blue - SNC brand foundation */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #0066A3; /* Lighter blue for interactive states */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #D32F2F; /* Construction Red for urgent actions */
+    --color-accent-foreground: #FFFFFF; /* white */
+    --color-destructive: #C62828; /* Error red */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Background Colors */
+    --color-background: #FAFBFC; /* gray-50 - Clean canvas */
+    --color-foreground: #1A1A1A; /* gray-900 - Maximum readability */
+    --color-card: #FFFFFF; /* white - Pure white for elevation */
+    --color-card-foreground: #1A1A1A; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1A1A1A; /* gray-900 */
+    
+    /* Muted Colors */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #666666; /* gray-600 - Clear hierarchy */
+    
+    /* Border & Input */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #E5E7EB; /* gray-200 */
+    --color-ring: #004369; /* Deep Blue */
+    
+    /* Status Colors */
+    --color-success: #2E7D32; /* green-800 - Project completion */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #F57C00; /* orange-700 - Timeline urgency */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #C62828; /* red-800 - Problem identification */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Additional Brand Colors */
+    --color-energetic-orange: #FF6B35; /* orange-500 - Conversion accent */
+    --color-text-secondary: #666666; /* gray-600 */
+    
+    /* Spacing & Layout */
+    --radius: 0.25rem; /* 4px - Geometric consistency */
+    
+    /* Typography */
+    --font-headline: 'Outfit', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Hexagonal clip-path utility */
+  .clip-hexagon {
+    clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+  }
+  
+  /* Animation utilities */
+  .animate-pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+}
