@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Icon from '../ui/AppIcon';
+import Image from 'next/image';
 
 interface NavigationItem {
   name: string;
@@ -56,36 +57,7 @@ const Header = () => {
           {/* Logo Section */}
           <Link href="/homepage" className="flex items-center space-x-3 group" onClick={closeMobileMenu}>
             <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
-              <svg
-                viewBox="0 0 100 100"
-                className="w-full h-full"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Hexagonal background */}
-                <polygon
-                  points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5"
-                  fill="var(--color-primary)"
-                  className="transition-colors duration-300"
-                />
-                {/* Inner hexagon accent */}
-                <polygon
-                  points="50,15 80,32.5 80,67.5 50,85 20,67.5 20,32.5"
-                  fill="var(--color-accent)"
-                  className="transition-colors duration-300"
-                />
-                {/* SNC text */}
-                <text
-                  x="50"
-                  y="58"
-                  fontFamily="var(--font-headline)"
-                  fontSize="24"
-                  fontWeight="700"
-                  fill="white"
-                  textAnchor="middle"
-                >
-                  SNC
-                </text>
-              </svg>
+              <Image src="/logo.png" alt="Six Nine Construction Logo" fill className="object-contain" />
             </div>
             <div className="hidden md:block">
               <div className="text-xl font-headline font-bold text-primary leading-tight">

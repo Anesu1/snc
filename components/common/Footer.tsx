@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Icon from '../ui/AppIcon';
+import Image from 'next/image';
 
 interface FooterLink {
   name: string;
@@ -69,32 +70,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link href="/homepage" className="inline-flex items-center space-x-3 mb-4 group">
               <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-full h-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polygon
-                    points="50,5 90,27.5 90,72.5 50,95 10,72.5 10,27.5"
-                    fill="white"
-                    opacity="0.1"
-                  />
-                  <polygon
-                    points="50,15 80,32.5 80,67.5 50,85 20,67.5 20,32.5"
-                    fill="var(--color-accent)"
-                  />
-                  <text
-                    x="50"
-                    y="58"
-                    fontFamily="var(--font-headline)"
-                    fontSize="24"
-                    fontWeight="700"
-                    fill="white"
-                    textAnchor="middle"
-                  >
-                    SNC
-                  </text>
-                </svg>
+               <Image src="/logo.png" alt="Six Nine Construction Logo" fill className="object-contain" />
               </div>
               <div>
                 <div className="text-lg font-headline font-bold leading-tight">
