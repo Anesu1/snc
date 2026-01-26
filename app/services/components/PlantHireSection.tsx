@@ -49,11 +49,7 @@ export default function PlantHireSection({ equipment }: PlantHireSectionProps) {
                   {item.category}
                 </div>
 
-                {/* Rate Badge */}
-                <div className="absolute bottom-4 right-4 px-4 py-2 bg-card rounded-lg shadow-construction">
-                  <div className="text-xs text-textSecondary mb-1">Daily Rate</div>
-                  <div className="text-lg font-headline font-bold text-primary">{item.dailyRate}</div>
-                </div>
+               
               </div>
 
               {/* Equipment Details */}
@@ -71,10 +67,10 @@ export default function PlantHireSection({ equipment }: PlantHireSectionProps) {
                 )}
                 </ul>
 
-                <button className="mt-6 w-full bg-primary text-primary-foreground py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-construction flex items-center justify-center space-x-2">
+                {/* <button className="mt-6 w-full bg-primary text-primary-foreground py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-construction flex items-center justify-center space-x-2">
                   <Icon name="CalendarIcon" size={18} />
                   <span>Check Availability</span>
-                </button>
+                </button> */}
               </div>
             </div>
           )}
@@ -97,8 +93,15 @@ export default function PlantHireSection({ equipment }: PlantHireSectionProps) {
               </div>
 
               <p className="text-textSecondary mb-6 leading-relaxed">
-                Through our strategic partnership with Dreamcast, we provide access to a comprehensive fleet of modern, well-maintained construction equipment. From excavators to bulldozers, we ensure your project has the machinery it needs for optimal efficiency.
+                We are proud to mention some of our clients who have been part of our journey, either for plant hire or construction services:
               </p>
+              <ul className="list-disc mb-10 list-inside text-textSecondary">
+                <li>Mega Market</li>
+                <li>Africa University</li>
+                <li>Surrey</li>
+                <li>Hillcrest College</li>
+                <li>Alrosa Zimbabwe</li>
+              </ul>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center space-x-3">
@@ -122,7 +125,7 @@ export default function PlantHireSection({ equipment }: PlantHireSectionProps) {
 
             <div className="relative h-80 rounded-xl overflow-hidden">
               <AppImage
-                src="https://images.unsplash.com/photo-1677475718543-4da8956a9ac9"
+                src="/images/services/dream.webp"
                 alt="Yellow excavator and bulldozer heavy machinery equipment parked on construction site with dirt and gravel"
                 className="w-full h-full object-cover" />
 

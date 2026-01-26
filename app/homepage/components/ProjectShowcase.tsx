@@ -29,56 +29,56 @@ const ProjectShowcase = () => {
   const projects: Project[] = [
   {
     id: 1,
-    name: "Mega Market Retail Complex",
-    value: "USD 1.6M",
-    category: "Commercial Construction",
-    location: "Harare, Zimbabwe",
+    name: "Surrey Deli & Group Promotion",
+    value: "",
+    category: "",
+    location: "Mutare Depot",
     completion: "2024",
-    image: "https://images.unsplash.com/photo-1690074470231-d4de8f9286cd",
+    image: "/images/surrey.webp",
     alt: "Modern multi-story retail complex with glass facade and steel framework under bright blue sky",
     description: "State-of-the-art retail facility with advanced structural engineering and modern amenities"
   },
   {
     id: 2,
-    name: "Africa University Campus",
-    value: "USD 890K",
-    category: "Educational Infrastructure",
-    location: "Mutare, Zimbabwe",
-    completion: "2023",
-    image: "https://images.unsplash.com/photo-1719861450499-22a9df52db09",
+    name: " Timeshares Troutbeck Property Showcase",
+    value: "",
+    category: "",
+    location: "",
+    completion: "",
+    image: "/images/time.webp",
     alt: "Contemporary university building with red brick exterior and large windows surrounded by green landscaping",
     description: "Multi-purpose academic facility with lecture halls, laboratories, and student amenities"
   },
   {
     id: 3,
-    name: "Hillcrest Residential Development",
-    value: "USD 1.2M",
-    category: "Residential Construction",
-    location: "Bulawayo, Zimbabwe",
+    name: "Late 2023/Early 2024 Interior & Detail Shots",
+    value: "",
+    category: "",
+    location: "",
     completion: "2024",
-    image: "https://images.unsplash.com/photo-1595601876492-bebd58848942",
+    image: "/images/late.webp",
     alt: "Luxury residential homes with modern architecture featuring white walls and large glass windows",
     description: "Premium residential complex with 24 luxury units and community facilities"
   },
   {
     id: 4,
-    name: "Maize Milling Industrial Plant",
-    value: "USD 256K",
-    category: "Industrial Construction",
-    location: "Gweru, Zimbabwe",
-    completion: "2023",
-    image: "https://images.unsplash.com/photo-1728267284131-e076b1666846",
+    name: "Mid-2024 General Updates",
+    value: "",
+    category: "",
+    location: "",
+    completion: "2024",
+    image: "/images/mid.webp",
     alt: "Industrial facility with large metal silos and processing equipment against cloudy sky",
     description: "Complete industrial facility with processing equipment and storage infrastructure"
   },
   {
     id: 5,
-    name: "Mining Infrastructure Project",
-    value: "USD 780K",
-    category: "Mining & Civil Engineering",
-    location: "Masvingo, Zimbabwe",
-    completion: "2024",
-    image: "https://images.unsplash.com/photo-1726554210101-950c365ca9b4",
+    name: "Early 2022 Premises Documentation",
+    value: "",
+    category: "",
+    location: "",
+    completion: "2022",
+    image: "/images/early.webp",
     alt: "Heavy construction equipment and earthmoving machinery at mining site with excavated terrain",
     description: "Comprehensive mining infrastructure including access roads and processing facilities"
   }];
@@ -151,6 +151,7 @@ const ProjectShowcase = () => {
             {/* Project Image */}
             <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-construction-lg group">
               <AppImage
+                key={activeProject.image} // Add a key to force re-render when the image changes
                 src={activeProject.image}
                 alt={activeProject.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />

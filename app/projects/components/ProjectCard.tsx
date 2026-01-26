@@ -142,18 +142,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* View Details Button */}
-        <Link
-          href={`/projects/${project.id}`}
-          className="flex items-center justify-center space-x-2 w-full px-4 py-3 bg-primary text-primary-foreground rounded-md font-headline font-semibold text-sm hover:bg-secondary transition-all duration-300 group-hover:shadow-construction"
-        >
-          <span>View Case Study</span>
-          <Icon
-            name="ArrowRightIcon"
-            size={18}
-            className="transition-transform duration-300 group-hover:translate-x-1"
-          />
-        </Link>
+       
       </div>
     </div>
   );

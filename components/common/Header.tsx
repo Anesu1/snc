@@ -22,7 +22,6 @@ const Header = () => {
     { name: 'About', href: '/about', icon: 'InformationCircleIcon' },
     { name: 'Services', href: '/services', icon: 'WrenchScrewdriverIcon' },
     { name: 'Projects', href: '/projects', icon: 'RectangleStackIcon' },
-    { name: 'Get Quote', href: '/get-quote', icon: 'DocumentTextIcon' },
   ];
 
 

@@ -131,7 +131,7 @@ const AnimatedHero = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+          {/* <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
             <div className="flex items-center space-x-2">
               <Icon name="CheckCircleIcon" size={20} className="text-success" />
               <span>ZIMRA ITF263 Certified</span>
@@ -144,15 +144,15 @@ const AnimatedHero = () => {
               <Icon name="CheckCircleIcon" size={20} className="text-success" />
               <span>USD 2M+ Projects</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <Icon name="ChevronDownIcon" size={32} className="opacity-60" />
-          </div>
+         
         </div>
       </div>
-
+ <div className="absolute  bottom-0 text-white left-1/2 transform -translate-x-1/2 animate-bounce">
+            <Icon name="ChevronDownIcon" size={32} className="opacity-60" />
+          </div>
       {/* Progress Indicators */}
       <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {valuePropositions.map((_, index) => (

@@ -63,7 +63,7 @@ const AboutInteractive = () => {
     title: "Building Zimbabwe\'s Future Since 2019",
     subtitle: "About Six Nine Construction",
     description: "The perfect fusion of Zimbabwean craftsmanship heritage and cutting-edge construction innovation. We represent unwavering reliability in an industry where trust is everything.",
-    heroImage: "https://images.unsplash.com/photo-1516122525-233a985caa45",
+    heroImage: "/images/about/hero.webp",
     heroImageAlt: "Modern construction site with steel framework and workers in safety gear against blue sky"
   };
 
@@ -111,88 +111,56 @@ const AboutInteractive = () => {
   const visionMissionItems: VisionMissionItem[] = [
   {
     title: "Our Vision",
-    content: "To be Zimbabwe's most trusted construction partner, recognized for transforming ambitious visions into enduring structures that shape communities and drive economic growth. We envision a future where every project we undertake becomes a landmark of quality, innovation, and sustainable development.",
+    content: "Our vision is to be the benchmark of excellence in the construction industry, setting new standards for quality, innovation, and client satisfaction. We aspire to be the preferred choice for clients seeking construction services, renowned for our unwavering commitment to delivering exceptional projects that transform communities and leave a lasting impact",
     icon: "EyeIcon",
     color: "bg-primary"
   },
   {
     title: "Our Mission",
-    content: "Bringing construction dreams to life through unwavering commitment to excellence, transparency, and client satisfaction. Every project is a testament to our dedication to quality craftsmanship, timely delivery, and building lasting relationships with our clients, partners, and communities.",
+    content: `Our mission is to be the construction company of choice in Zimbabwe, 
+recognized for our unwavering commitment to quality, reliability, and 
+customer satisfaction. We aim to exceed client expectations by delivering 
+innovative, sustainable, and cost-effective construction solutions that 
+enhance the built environment and contribute to the growth and 
+development of our nation.`,
     icon: "RocketLaunchIcon",
     color: "bg-accent"
   }];
 
 
-  const teamMembers: TeamMember[] = [
-  {
-    name: "Cosmas Munyoro",
-    position: "Chief Executive Officer",
-    expertise: "Strategic Leadership & Business Development",
-    bio: "With over 15 years of construction industry experience, Cosmas leads SNC's strategic vision and client relationships. His expertise in large-scale project management and business development has positioned SNC as Zimbabwe's premier construction innovator.",
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_138e07571-1763295086046.png",
-    imageAlt: "Professional African businessman in navy suit with confident smile in modern office setting",
-    credentials: [
-    "MBA in Construction Management",
-    "Certified Project Management Professional (PMP)",
-    "15+ years construction industry experience",
-    "Led USD 10M+ in project delivery"],
-
-    email: "cosmas@sncconstruction.co.zw",
-    phone: "+263 123 456 789"
-  },
-  {
-    name: "Clive Chikwanha",
-    position: "Chief Operations Officer",
-    expertise: "Operations Management & Technical Excellence",
-    bio: "Clive oversees all operational aspects of SNC's projects, ensuring quality standards and timely delivery. His technical expertise and attention to detail have been instrumental in maintaining SNC's reputation for excellence.",
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_1b5408773-1763295371393.png",
-    imageAlt: "Professional African man in gray suit with engineering blueprints in construction office",
-    credentials: [
-    "BSc Civil Engineering",
-    "Chartered Engineer (CEng)",
-    "12+ years operational leadership",
-    "Safety & Quality Management Certified"],
-
-    email: "clive@sncconstruction.co.zw",
-    phone: "+263 123 456 790"
-  },
-  {
-    name: "Gloria Mapfumo",
-    position: "Chief Financial Officer",
-    expertise: "Financial Strategy & Compliance",
-    bio: "Gloria manages SNC's financial operations, ensuring fiscal responsibility and regulatory compliance. Her strategic financial planning has enabled SNC to undertake increasingly ambitious projects while maintaining financial stability.",
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_13f6f0de1-1763295015458.png",
-    imageAlt: "Professional African businesswoman in burgundy blazer with confident expression in corporate office",
-    credentials: [
-    "CA(Z) Chartered Accountant",
-    "MBA in Finance",
-    "10+ years financial leadership",
-    "ZIMRA Compliance Expert"],
-
-    email: "gloria@sncconstruction.co.zw",
-    phone: "+263 123 456 791"
-  }];
+ 
 
 
   const cultureValues: CultureValue[] = [
   {
-    title: "Excellence",
-    description: "We pursue the highest standards in every aspect of our work, from initial planning to final delivery. Excellence is not just a goal—it's our standard operating procedure.",
+    title: "INNOVATION AND ADAPTABILITY ",
+    description: `We continuously seek new ways to 
+improve our construction processes, techniques and technologies. 
+Ensuring that our clients benefit from the latest innovations in design, 
+sustainability and construction methodologies.`,
     icon: "StarIcon"
   },
   {
-    title: "Integrity",
-    description: "Transparency and honesty guide every decision we make. We build trust through consistent ethical practices and open communication with all stakeholders.",
+    title: "CLIENT-CENTRIC APPROACH ",
+    description: `At the core of our vision is a deep 
+commitment to our clients. We aim to build strong, long-lasting 
+relationships by understanding their unique needs, exceeding their 
+expectations, and delivering projects that align with their vision and goals.`,
     icon: "ShieldCheckIcon"
   },
   {
-    title: "Innovation",
-    description: "We embrace cutting-edge construction techniques and technologies while respecting traditional craftsmanship. Innovation drives our competitive advantage.",
+    title: "COMMITMENT",
+    description: `We are committed to making a positive impact on the 
+communities in which we operate. Our vision includes actively engaging
+ with local stakeholders, contributing to social and economic development, 
+and creating infrastructure that enhances the quality of life for residents.`,
     icon: "LightBulbIcon"
   },
   {
-    title: "Community",
-    description: "Every project contributes to Zimbabwe's development. We're committed to local employment, skills development, and sustainable community impact.",
+    title: "TEAM WORK",
+    description: `We believe in working together in a way that takes 
+advantage of each team member’s unique strengths to achieve something 
+that exceeds the cumulative results that one could ever have achieved.`,
     icon: "UserGroupIcon"
   }];
 
@@ -281,14 +249,13 @@ const AboutInteractive = () => {
       <HeroSection {...heroData} />
       <FoundingStorySection story={foundingStory} milestones={milestones} />
       <VisionMissionSection items={visionMissionItems} />
-      <LeadershipTeamSection teamMembers={teamMembers} />
       <CompanyCultureSection
         values={cultureValues}
-        communityImage="https://images.pixabay.com/photo/2016/11/29/03/36/architecture-1867187_1280.jpg"
+        communityImage="/images/about/community.webp"
         communityImageAlt="Diverse group of construction workers and engineers collaborating on building site with modern equipment"
         communityImpact={communityImpact} />
 
-      <CertificationsSection certifications={certifications} />
+      {/* <CertificationsSection certifications={certifications} /> */}
     </div>);
 
 };

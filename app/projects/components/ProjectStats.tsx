@@ -18,7 +18,7 @@ export default function ProjectStats({ stats }: ProjectStatsProps) {
         {/* Section Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center space-x-2 bg-primary px-4 py-2 rounded-full mb-4">
-            <Icon name="ChartBarIcon" size={20} variant="solid" className="text-primary-foreground" />
+            <Icon name="ChartBarIcon" size={20} variant="solid" className="text-white" />
             <span className="text-sm font-headline font-semibold text-primary-foreground">
               Performance Metrics
             </span>
@@ -45,7 +45,7 @@ export default function ProjectStats({ stats }: ProjectStatsProps) {
                   name={stat.icon as any}
                   size={28}
                   variant="solid"
-                  className="text-primary group-hover:text-primary-foreground transition-colors duration-300"
+                  className="text-white group-hover:text-primary-foreground transition-colors duration-300"
                 />
               </div>
 

@@ -101,10 +101,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                 </div>
 
                 {/* CTA Button */}
-                <button className="flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-headline font-semibold text-sm hover:bg-secondary transition-all duration-300 hover:shadow-construction">
-                  <span>View Full Case Study</span>
-                  <Icon name="ArrowRightIcon" size={18} />
-                </button>
+               
               </div>
             </div>
           ))}

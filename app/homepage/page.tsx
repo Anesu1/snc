@@ -23,7 +23,7 @@ export default function Homepage() {
         <ProjectShowcase />
         <ServicesGrid />
         <TrustSignals />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
         <QuoteRequestCTA />
       </main>
       <Footer />

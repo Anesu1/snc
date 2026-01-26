@@ -30,19 +30,7 @@ export default function ServiceCard({
   return (
     <div className="bg-card rounded-2xl overflow-hidden shadow-construction hover:shadow-construction-lg transition-all duration-300 group">
       {/* Image Section */}
-      <div className="relative h-64 overflow-hidden">
-        <AppImage
-          src={image}
-          alt={imageAlt}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-foreground via-transparent to-transparent opacity-60" />
-        
-        {/* Icon Badge */}
-        <div className={`absolute top-6 left-6 w-16 h-16 ${bgColor} rounded-xl flex items-center justify-center shadow-construction`}>
-          <Icon name={icon as any} size={32} className={textColor} />
-        </div>
-      </div>
+    
 
       {/* Content Section */}
       <div className="p-8">
@@ -66,11 +54,7 @@ export default function ServiceCard({
           ))}
         </ul>
 
-        {/* CTA Button */}
-        <button className={`mt-8 w-full ${bgColor} ${textColor} py-3 px-6 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-construction flex items-center justify-center space-x-2 group-hover:scale-105`}>
-          <span>Learn More</span>
-          <Icon name="ArrowRightIcon" size={18} />
-        </button>
+       
       </div>
     </div>
   );

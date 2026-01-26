@@ -71,12 +71,12 @@ export default function ProcessTimeline({ steps }: ProcessTimelineProps) {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <button className="inline-flex items-center space-x-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-headline font-semibold shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105">
             <Icon name="RocketLaunchIcon" size={20} />
             <span>Start Your Project</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

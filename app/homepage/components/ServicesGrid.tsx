@@ -121,9 +121,8 @@ const ServicesGrid = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {services.map((service) => (
-            <Link
+            <div
               key={service.id}
-              href={service.link}
               className="group bg-card rounded-lg p-6 shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105"
             >
               <div className="flex items-center space-x-4 mb-4">
@@ -131,7 +130,7 @@ const ServicesGrid = () => {
                   <Icon
                     name={service.icon as any}
                     size={24}
-                    className="text-primary group-hover:text-accent-foreground transition-colors duration-300"
+                    className=" text-white group-hover:text-accent-foreground transition-colors duration-300"
                   />
                 </div>
                 <h3 className="text-xl font-headline font-bold text-primary group-hover:text-accent transition-colors duration-300">
@@ -152,11 +151,8 @@ const ServicesGrid = () => {
                 ))}
               </ul>
 
-              <div className="flex items-center space-x-2 text-accent font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
-                <span>Learn More</span>
-                <Icon name="ArrowRightIcon" size={16} />
-              </div>
-            </Link>
+              
+            </div>
           ))}
         </div>
 

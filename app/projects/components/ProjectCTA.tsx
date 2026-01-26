@@ -53,18 +53,18 @@ export default function ProjectCTA() {
           <div className="mt-12 pt-8 border-t border-white border-opacity-20">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-sm">
               <a
-                href="tel:+263123456789"
+                href="tel:+263773414446"
                 className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200"
               >
                 <Icon name="PhoneIcon" size={20} />
-                <span>+263 123 456 789</span>
+                <span>+263 773 414 446</span>
               </a>
               <a
-                href="mailto:info@sncconstruction.co.zw"
+                href="mailto:info@snc.co.zw"
                 className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200"
               >
                 <Icon name="EnvelopeIcon" size={20} />
-                <span>info@sncconstruction.co.zw</span>
+                <span>info@snc.co.zw</span>
               </a>
             </div>
           </div>

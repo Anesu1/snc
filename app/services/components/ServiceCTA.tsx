@@ -46,11 +46,11 @@ export default function ServiceCTA() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-accent text-accent-foreground rounded-lg font-headline font-semibold shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105">
+              <button className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-accent text-accent-foreground rounded-lg font-headline font-semibold shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105" onClick={() => window.location.href='/get-quote'}>
                 <Icon name="DocumentTextIcon" size={20} />
                 <span>Get Free Quote</span>
               </button>
-              <button className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white bg-opacity-10 text-primary-foreground rounded-lg font-headline font-semibold border-2 border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300">
+              <button className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white bg-opacity-10 text-primary-foreground rounded-lg font-headline font-semibold border-2 border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300" onClick={() => window.location.href='tel:+263123456789'}>
                 <Icon name="PhoneIcon" size={20} />
                 <span>Call Us Now</span>
               </button>
@@ -81,7 +81,7 @@ export default function ServiceCTA() {
           <div className="relative">
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-construction-lg">
               <AppImage
-                src="https://img.rocket.new/generatedImages/rocket_gen_img_1b7e40a0c-1767813710195.png"
+                src="/images/services/ready.webp"
                 alt="Professional construction team of diverse workers in hard hats and safety gear reviewing blueprints on construction site with modern building in background"
                 className="w-full h-full object-cover" />
 

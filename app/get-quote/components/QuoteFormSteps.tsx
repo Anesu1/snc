@@ -173,9 +173,32 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
     setCurrentStep((prev) => Math.max(prev - 1, 1));
   };
 
-  const handleSubmit = () => {
-    if (validateStep(currentStep)) {
-      onSubmit(formData);
+
+  const [submitting, setSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async () => {
+    if (!validateStep(currentStep)) return;
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch('/api/send-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setSubmitSuccess(true);
+        onSubmit(formData);
+      } else {
+        const data = await res.json();
+        setSubmitError(data.error || 'Failed to send quote request.');
+      }
+    } catch (err: any) {
+      setSubmitError('Failed to send quote request.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -238,7 +261,7 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
                   }}
                   className={`p-6 rounded-lg border-2 transition-all duration-300 text-left ${
                     formData.projectType === type.type
-                      ? 'border-primary bg-primary bg-opacity-5 shadow-construction'
+                      ? 'border-primary bg-primary text-white bg-opacity-5 shadow-construction'
                       : 'border-border hover:border-primary hover:shadow-md'
                   }`}
                 >
@@ -246,13 +269,15 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
                     name={type.icon as any}
                     size={32}
                     className={`mb-4 ${
-                      formData.projectType === type.type ? 'text-primary' : 'text-muted-foreground'
+                      formData.projectType === type.type ? 'text-white' : 'text-muted-foreground'
                     }`}
                   />
-                  <h3 className="text-lg font-headline font-semibold text-foreground mb-1">
+                  <h3 className={`text-lg ${
+                      formData.projectType === type.type ? "text-white" : ""} font-headline font-semibold text-foreground mb-1`}>
                     {type.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{type.description}</p>
+                  <p className={`text-sm ${
+                      formData.projectType === type.type ? "text-white" : ""} text-muted-foreground`}>{type.description}</p>
                 </button>
               ))}
             </div>
@@ -271,7 +296,7 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
                         onClick={() => handleInputChange('projectCategory', category)}
                         className={`p-4 rounded-lg border transition-all duration-200 text-left ${
                           formData.projectCategory === category
-                            ? 'border-primary bg-primary bg-opacity-5 text-primary font-medium' :'border-border hover:border-primary'
+                            ? 'border-primary bg-primary bg-opacity-5 text-white font-medium' :'border-border hover:border-primary'
                         }`}
                       >
                         {category}
@@ -442,7 +467,7 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
                       onClick={() => handleInputChange('urgency', urgency.value)}
                       className={`p-4 rounded-lg border transition-all duration-200 flex items-center space-x-3 ${
                         formData.urgency === urgency.value
-                          ? 'border-primary bg-primary bg-opacity-5 text-primary font-medium' :'border-border hover:border-primary'
+                          ? 'border-primary bg-primary bg-opacity-5 text-white font-medium' :'border-border hover:border-primary'
                       }`}
                     >
                       <Icon name={urgency.icon as any} size={20} />
@@ -585,7 +610,7 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
                       onClick={() => handleInputChange('clientType', type.value)}
                       className={`p-4 rounded-lg border transition-all duration-200 flex items-center space-x-3 ${
                         formData.clientType === type.value
-                          ? 'border-primary bg-primary bg-opacity-5 text-primary font-medium' :'border-border hover:border-primary'
+                          ? 'border-primary bg-primary bg-opacity-5 text-white font-medium' :'border-border hover:border-primary'
                       }`}
                     >
                       <Icon name={type.icon as any} size={20} />
@@ -681,9 +706,10 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
                       onClick={() => handleInputChange('preferredContact', method.value)}
                       className={`p-4 rounded-lg border transition-all duration-200 flex items-center space-x-3 ${
                         formData.preferredContact === method.value
-                          ? 'border-primary bg-primary bg-opacity-5 text-primary font-medium' :'border-border hover:border-primary'
+                          ? 'border-primary bg-primary bg-opacity-5 text-white font-medium' :'border-border hover:border-primary'
                       }`}
                     >
+                      
                       <Icon name={method.icon as any} size={20} />
                       <span>{method.label}</span>
                     </button>
@@ -695,34 +721,60 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
         )}
 
         {/* Navigation Buttons */}
-        <div className="flex items-center justify-between mt-8 pt-6 border-t border-border">
-          <button
-            onClick={handlePrevious}
-            disabled={currentStep === 1}
-            className="flex items-center space-x-2 px-6 py-3 rounded-lg border border-border text-foreground hover:bg-muted transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <Icon name="ChevronLeftIcon" size={20} />
-            <span>Previous</span>
-          </button>
-
-          {currentStep < totalSteps ? (
-            <button
-              onClick={handleNext}
-              disabled={!validateStep(currentStep)}
-              className="flex items-center space-x-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:shadow-construction-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
-            >
-              <span>Next Step</span>
-              <Icon name="ChevronRightIcon" size={20} />
-            </button>
+        <div className="flex flex-col gap-4 items-center justify-between mt-8 pt-6 border-t border-border">
+          {submitSuccess ? (
+            <div className="text-success text-center font-semibold flex flex-col items-center">
+              <Icon name="CheckCircleIcon" size={32} className="mb-2" />
+              Your quote request has been sent! We'll be in touch soon.
+            </div>
           ) : (
-            <button
-              onClick={handleSubmit}
-              disabled={!validateStep(currentStep)}
-              className="flex items-center space-x-2 px-8 py-3 rounded-lg bg-accent text-accent-foreground font-headline font-semibold hover:shadow-construction-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
-            >
-              <Icon name="PaperAirplaneIcon" size={20} />
-              <span>Submit Quote Request</span>
-            </button>
+            <>
+              {submitError && (
+                <div className="text-destructive text-center font-semibold flex flex-col items-center">
+                  <Icon name="ExclamationTriangleIcon" size={24} className="mb-1" />
+                  {submitError}
+                </div>
+              )}
+              <div className="flex w-full items-center justify-between">
+                <button
+                  onClick={handlePrevious}
+                  disabled={currentStep === 1 || submitting}
+                  className="flex items-center space-x-2 px-6 py-3 rounded-lg border border-border text-foreground hover:bg-muted transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Icon name="ChevronLeftIcon" size={20} />
+                  <span>Previous</span>
+                </button>
+
+                {currentStep < totalSteps ? (
+                  <button
+                    onClick={handleNext}
+                    disabled={!validateStep(currentStep) || submitting}
+                    className="flex items-center space-x-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:shadow-construction-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
+                  >
+                    <span>Next Step</span>
+                    <Icon name="ChevronRightIcon" size={20} />
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleSubmit}
+                    disabled={!validateStep(currentStep) || submitting}
+                    className="flex items-center space-x-2 px-8 py-3 rounded-lg bg-accent text-accent-foreground font-headline font-semibold hover:shadow-construction-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none"
+                  >
+                    {submitting ? (
+                      <>
+                        <Icon name="ArrowPathIcon" size={20} className="animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Icon name="PaperAirplaneIcon" size={20} />
+                        <span>Submit Quote Request</span>
+                      </>
+                    )}
+                  </button>
+                )}
+              </div>
+            </>
           )}
         </div>
       </div>

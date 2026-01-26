@@ -38,8 +38,8 @@ const TrustSignals = () => {
           className="p-4 bg-card rounded-lg border border-border hover:border-primary transition-all duration-300 hover:shadow-md"
         >
           <div className="flex items-start space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0">
-              <Icon name={signal.icon as any} size={20} className="text-primary" />
+            <div className="w-10 h-10 rounded-lg text-white bg-primary bg-opacity-10 flex items-center justify-center flex-shrink-0">
+              <Icon name={signal.icon as any} size={20} className="text-white" />
             </div>
             <div>
               <h3 className="text-sm font-headline font-semibold text-foreground mb-1">

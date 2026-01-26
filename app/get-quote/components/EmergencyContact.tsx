@@ -1,3 +1,4 @@
+import { FaWhatsapp } from 'react-icons/fa';
 import Icon from '../../../components/ui/AppIcon';
 
 
@@ -16,19 +17,19 @@ const EmergencyContact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="tel:+263123456789"
+              href="tel:0202065845"
               className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-white text-accent rounded-lg font-headline font-semibold hover:shadow-lg transition-all duration-300"
             >
               <Icon name="PhoneIcon" size={20} />
               <span>Call Emergency Line</span>
             </a>
             <a
-              href="https://wa.me/263123456789"
+              href="https://wa.me/263772285499"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-white bg-opacity-20 border-2 border-white rounded-lg font-headline font-semibold hover:bg-white hover:text-accent transition-all duration-300"
             >
-              <Icon name="ChatBubbleLeftRightIcon" size={20} />
+              <FaWhatsapp />
               <span>WhatsApp Support</span>
             </a>
           </div>

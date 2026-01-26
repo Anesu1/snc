@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Icon from '../ui/AppIcon';
 import Image from 'next/image';
+import { FaFacebook } from 'react-icons/fa';
 
 interface FooterLink {
   name: string;
@@ -27,31 +28,29 @@ const Footer = () => {
         { name: 'Get Quote', href: '/get-quote' },
       ],
     },
-    {
-      title: 'Services',
-      links: [
-        { name: 'Commercial Construction', href: '/services#commercial' },
-        { name: 'Residential Projects', href: '/services#residential' },
-        { name: 'Mining Infrastructure', href: '/services#mining' },
-        { name: 'Government Contracts', href: '/services#government' },
-      ],
-    },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Client Portal', href: '/client-portal' },
-        { name: 'Project Planning Guide', href: '/resources/planning' },
-        { name: 'Cost Calculator', href: '/resources/calculator' },
-        { name: 'FAQs', href: '/resources/faq' },
-      ],
-    },
+    // {
+    //   title: 'Services',
+    //   links: [
+    //     { name: 'Commercial Construction', href: '/services#commercial' },
+    //     { name: 'Residential Projects', href: '/services#residential' },
+    //     { name: 'Mining Infrastructure', href: '/services#mining' },
+    //     { name: 'Government Contracts', href: '/services#government' },
+    //   ],
+    // },
+    // {
+    //   title: 'Resources',
+    //   links: [
+    //     { name: 'Client Portal', href: '/client-portal' },
+    //     { name: 'Project Planning Guide', href: '/resources/planning' },
+    //     { name: 'Cost Calculator', href: '/resources/calculator' },
+    //     { name: 'FAQs', href: '/resources/faq' },
+    //   ],
+    // },
   ];
 
   const socialLinks = [
-    { name: 'Facebook', icon: 'ShareIcon', href: '#' },
-    { name: 'LinkedIn', icon: 'ShareIcon', href: '#' },
-    { name: 'Twitter', icon: 'ShareIcon', href: '#' },
-    { name: 'Instagram', icon: 'ShareIcon', href: '#' },
+    { name: 'Facebook', icon: 'Facebook', href: 'https://www.facebook.com/sixnineconstruction' },
+    
   ];
 
   const certifications = [
@@ -65,7 +64,7 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <Link href="/homepage" className="inline-flex items-center space-x-3 mb-4 group">
@@ -82,7 +81,7 @@ const Footer = () => {
               </div>
             </Link>
 
-            <p className="text-sm opacity-90 mb-4 leading-relaxed">
+            <p className="text-sm max-w-[500px] opacity-90 mb-4 leading-relaxed">
               Zimbabwe's premier construction innovator delivering USD 2M+ projects with precision,
               transparency, and unwavering commitment to excellence since 2015.
             </p>
@@ -94,18 +93,18 @@ const Footer = () => {
                 className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
               >
                 <Icon name="PhoneIcon" size={18} />
-                <span>+263 123 456 789</span>
+                <span>+263 77 228 5499 / 078 485 0694 / 0202 065 845</span>
               </a>
               <a
                 href="mailto:info@sncconstruction.co.zw"
                 className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
               >
                 <Icon name="EnvelopeIcon" size={18} />
-                <span>info@sncconstruction.co.zw</span>
+                <span>info@snc.co.zw</span>
               </a>
               <div className="flex items-start space-x-2">
                 <Icon name="MapPinIcon" size={18} className="mt-0.5 flex-shrink-0" />
-                <span>123 Construction Avenue, Harare, Zimbabwe</span>
+                <span>No. 4 Kariba Rd Nyakamete, Industrial Area, Mutare Zimbabwe</span>
               </div>
             </div>
 
@@ -115,10 +114,11 @@ const Footer = () => {
                 <a
                   key={social.name}
                   href={social.href}
+                  target='_blank'
                   className="w-10 h-10 rounded-md bg-white bg-opacity-10 flex items-center justify-center hover:bg-accent transition-all duration-300 hover:scale-110"
                   aria-label={social.name}
                 >
-                  <Icon name={social.icon as any} size={20} />
+                  <FaFacebook />
                 </a>
               ))}
             </div>
@@ -144,20 +144,7 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Certifications Bar */}
-        <div className="mt-12 pt-8 border-t border-white border-opacity-10">
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {certifications.map((cert) => (
-              <div
-                key={cert}
-                className="flex items-center space-x-2 px-4 py-2 bg-white bg-opacity-10 rounded-md"
-              >
-                <Icon name="CheckBadgeIcon" size={18} className="text-success" />
-                <span className="text-sm font-medium">{cert}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      
       </div>
 
       {/* Bottom Bar */}
@@ -180,12 +167,7 @@ const Footer = () => {
               >
                 Terms of Service
               </Link>
-              <Link
-                href="/compliance"
-                className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-200"
-              >
-                Compliance
-              </Link>
+            
             </div>
           </div>
         </div>

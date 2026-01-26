@@ -362,13 +362,13 @@ export default function ProjectsPage() {
   const stats: Stat[] = [
   {
     icon: 'BuildingOffice2Icon',
-    value: '50+',
+    value: '10+',
     label: 'Projects Completed',
     description: 'Successfully delivered projects across commercial, residential, industrial, and civil engineering sectors'
   },
   {
     icon: 'CurrencyDollarIcon',
-    value: '$12M+',
+    value: '$5M+',
     label: 'Total Project Value',
     description: 'Cumulative value of projects delivered since 2019, demonstrating financial capability and trust'
   },
@@ -394,7 +394,7 @@ export default function ProjectsPage() {
         <FeaturedProjects projects={featuredProjects} />
         <ProjectsInteractive initialProjects={allProjects} />
         <ProjectTimeline timeline={timeline} />
-        <ClientTestimonials testimonials={testimonials} />
+        
         <ProjectStats stats={stats} />
         <ProjectCTA />
       </main>

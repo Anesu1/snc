@@ -114,11 +114,11 @@ const QuotePageInteractive = () => {
           </section>
 
           {/* Testimonials */}
-          <section className="py-12 bg-muted">
+          {/* <section className="py-12 bg-muted">
             <div className="container mx-auto px-4">
               <ProjectTestimonials />
             </div>
-          </section>
+          </section> */}
 
           {/* Emergency Contact */}
           <section className="py-12">

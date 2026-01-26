@@ -58,7 +58,7 @@ export default function ServiceHero({ title, description, stats }: ServiceHeroPr
           <div className="relative">
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-construction-lg">
               <AppImage
-                src="https://images.unsplash.com/photo-1505741254850-ae2663410017"
+                src="/images/services/hero.webp"
                 alt="Construction workers in yellow hard hats and safety vests working on steel framework of modern building structure against blue sky"
                 className="w-full h-full object-cover" />
 

@@ -67,7 +67,7 @@ export default function ServiceComparison({ features }: ServiceComparisonProps) 
                 {packages.map((pkg, index) => (
                   <th key={index} className="p-6 text-center relative">
                     {pkg.popular && (
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                      <div className="absolute top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full">
                           Most Popular
                         </span>

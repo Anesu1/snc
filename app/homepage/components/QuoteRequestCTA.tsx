@@ -103,14 +103,14 @@ const QuoteRequestCTA = () => {
               className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
             >
               <Icon name="PhoneIcon" size={18} />
-              <span>+263 123 456 789</span>
+              <span>+263 773 414 446</span>
             </a>
             <a
               href="mailto:info@sncconstruction.co.zw"
               className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
             >
               <Icon name="EnvelopeIcon" size={18} />
-              <span>info@sncconstruction.co.zw</span>
+              <span>info@snc.co.zw</span>
             </a>
           </div>
         </div>
