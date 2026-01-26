@@ -88,11 +88,11 @@ const QuoteRequestCTA = () => {
               <span>Get Free Quote Now</span>
             </Link>
             <Link
-              href="/projects"
+              href="/services"
               className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-primary rounded-md font-headline font-semibold text-lg shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto justify-center"
             >
               <Icon name="RectangleStackIcon" size={24} />
-              <span>View Our Work</span>
+              <span>View Our Service</span>
             </Link>
           </div>
 

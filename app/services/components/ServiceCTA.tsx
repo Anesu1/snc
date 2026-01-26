@@ -70,7 +70,7 @@ export default function ServiceCTA() {
                   <Icon name="EnvelopeIcon" size={20} className="opacity-80" />
                   <div>
                     <div className="text-xs opacity-70">Email Us</div>
-                    <div className="font-semibold">info@sncconstruction.co.zw</div>
+                    <div className="font-semibold">info@snc.co.zw</div>
                   </div>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function ServiceCTA() {
             {/* Floating Stats */}
             <div className="absolute -bottom-6 -right-6 bg-card text-foreground p-6 rounded-xl shadow-construction-lg">
               <div className="text-center">
-                <div className="text-3xl font-headline font-bold text-primary mb-1">2000+</div>
+                <div className="text-3xl font-headline font-bold text-primary mb-1">10+</div>
                 <div className="text-sm text-textSecondary">Projects Completed</div>
               </div>
             </div>

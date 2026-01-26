@@ -122,11 +122,11 @@ const AnimatedHero = () => {
               <span>Get Free Quote</span>
             </Link>
             <Link
-              href="/projects"
+              href="/services"
               className="inline-flex items-center space-x-2 px-8 py-4 bg-white bg-opacity-10 text-primary-foreground rounded-md font-headline font-semibold text-lg border-2 border-white border-opacity-30 hover:bg-opacity-20 transition-all duration-300 w-full sm:w-auto justify-center"
             >
               <Icon name="RectangleStackIcon" size={24} />
-              <span>View Projects</span>
+              <span>View Services</span>
             </Link>
           </div>
 

@@ -199,13 +199,7 @@ const ProjectShowcase = () => {
               </div>
 
               <div className="flex items-center space-x-4 pt-4">
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-headline font-semibold shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105">
-
-                  <span>View All Projects</span>
-                  <Icon name="ArrowRightIcon" size={20} />
-                </Link>
+               
                 <Link
                   href="/get-quote"
                   className="inline-flex items-center space-x-2 px-6 py-3 bg-accent text-accent-foreground rounded-md font-headline font-semibold shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105">
