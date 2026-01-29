@@ -181,25 +181,13 @@ const ProjectShowcase = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex items-start space-x-3">
-                  <Icon name="MapPinIcon" size={20} className="text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <div className="text-sm text-textSecondary">Location</div>
-                    <div className="font-medium text-foreground">{activeProject.location}</div>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <Icon name="CalendarIcon" size={20} className="text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <div className="text-sm text-textSecondary">Completed</div>
-                    <div className="font-medium text-foreground">{activeProject.completion}</div>
-                  </div>
-                </div>
-              </div>
+             
 
               <div className="flex items-center space-x-4 pt-4">
-               
+                <Link href="/projects" className="inline-flex items-center space-x-2 px-6 py-3 bg-primary text-primary-foreground rounded-md font-headline font-semibold shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105">
+                  <Icon name="BuildingOffice2Icon" size={20} />
+                  <span>View All Projects</span>
+                </Link>
                 <Link
                   href="/get-quote"
                   className="inline-flex items-center space-x-2 px-6 py-3 bg-accent text-accent-foreground rounded-md font-headline font-semibold shadow-construction hover:shadow-construction-lg transition-all duration-300 hover:scale-105">

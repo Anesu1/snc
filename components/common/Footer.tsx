@@ -24,7 +24,7 @@ const Footer = () => {
       links: [
         { name: 'About Us', href: '/about' },
         { name: 'Our Services', href: '/services' },
-        // { name: 'Projects', href: '/projects' },
+        { name: 'Projects', href: '/projects' },
         { name: 'Get Quote', href: '/get-quote' },
       ],
     },
@@ -89,18 +89,19 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-2 text-sm">
               <a
-                href="tel:+263123456789"
+                href="tel:+263772285499"
                 className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
               >
                 <Icon name="PhoneIcon" size={18} />
-                <span>+263 77 228 5499 / 078 485 0694 / 0202 065 845</span>
+                <span> +263 77 100 1750 
+ / +263 77 100 1577 / 0202 065 845</span>
               </a>
               <a
-                href="mailto:info@sncconstruction.co.zw"
+                href="mailto:info@snc.co.zw"
                 className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
               >
                 <Icon name="EnvelopeIcon" size={18} />
-                <span>info@snc.co.zw</span>
+                <span>info@snc.co.zw / cosmas@snc.co.zw</span>
               </a>
               <div className="flex items-start space-x-2">
                 <Icon name="MapPinIcon" size={18} className="mt-0.5 flex-shrink-0" />

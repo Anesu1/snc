@@ -70,22 +70,7 @@ export default function ProjectTimeline({ timeline }: ProjectTimelineProps) {
                               <h4 className="text-base font-headline font-semibold text-foreground flex-1">
                                 {project.title}
                               </h4>
-                              <div
-                                className={`flex items-center space-x-1 px-2 py-1 rounded text-xs font-semibold ${
-                                  project.status.toLowerCase() === 'completed'
-                                    ? 'bg-success bg-opacity-10 text-success' :'bg-warning bg-opacity-10 text-warning'
-                                }`}
-                              >
-                                <Icon
-                                  name={
-                                    project.status.toLowerCase() === 'completed'
-                                      ? 'CheckCircleIcon' :'ClockIcon'
-                                  }
-                                  size={12}
-                                  variant="solid"
-                                />
-                                <span>{project.status}</span>
-                              </div>
+                             
                             </div>
                             <div className="flex items-center space-x-2 text-accent">
                               <Icon name="CurrencyDollarIcon" size={16} variant="solid" />

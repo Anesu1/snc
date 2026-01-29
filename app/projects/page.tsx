@@ -76,199 +76,286 @@ interface Stat {
 export default function ProjectsPage() {
   const allProjects: Project[] = [
   {
-    id: 'mega-market-harare',
-    title: 'Mega Market Harare',
-    category: 'Commercial',
-    location: 'Harare, Zimbabwe',
-    value: '$1.6M',
-    valueNumeric: 1600000,
-    duration: '18 months',
-    completionDate: '15/08/2025',
-    status: 'Completed',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_19d1cc887-1766601325766.png",
-    alt: 'Modern commercial retail building with glass facade and steel framework in urban Harare setting',
-    client: 'Mega Market Corporation',
-    description: 'Large-scale commercial retail complex featuring modern architecture, advanced structural engineering, and sustainable building practices. The project included extensive civil works, electrical systems, and HVAC installations.',
-    highlights: ['On-time delivery', 'LEED certified', 'Advanced HVAC', 'Seismic design']
+    id: "1",
+    title: "Hillcrest College Boys Hostel Construction",
+    client: "Hillcrest College",
+    description: "Construction of a new institutional residential facility, demonstrating structural progress from foundation to near completion of a major section.",
+    category: "Commercial",
+    location: "Hillcrest",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "May - Jul 2024",
+    completionDate: "2024-07-31",
+    status: "Ongoing",
+    highlights: [
+      "11 weeks of consistent progress tracking",
+      "Focus on educational infrastructure",
+      "Recent construction activity in July 2024"
+    ],
+    image: "/images/projects/hill.webp",
+    alt: "Hillcrest College Boys Hostel Construction"
   },
   {
-    id: 'africa-university-maize',
-    title: 'Africa University Maize Milling Facility',
-    category: 'Industrial',
-    location: 'Mutare, Zimbabwe',
-    value: '$256K',
-    valueNumeric: 256000,
-    duration: '8 months',
-    completionDate: '20/11/2025',
-    status: 'Completed',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d1995559-1764662280745.png",
-    alt: 'Industrial maize milling facility with modern processing equipment and steel structure',
-    client: 'Africa University',
-    description: 'State-of-the-art maize milling facility designed for educational and commercial purposes. Features include automated processing systems, quality control laboratories, and efficient material handling infrastructure.',
-    highlights: ['Automated systems', 'Quality labs', 'Efficient workflow', 'Safety compliant']
+    id: "2",
+    title: "Mega Market Flour Mill Substation",
+    client: "Mega Market / Industrial Partner",
+    description: "Design and construction of critical electrical infrastructure (substation) to ensure a stable, high-capacity power supply for a large industrial/commercial user.",
+    category: "Industrial",
+    location: "Mega Market Complex",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Apr - Jul 2022",
+    completionDate: "2022-07-31",
+    status: "Completed",
+    highlights: [
+      "Specialized electrical infrastructure",
+      "Rapid civil works completion",
+      "Installation of major electrical components"
+    ],
+    image: "/images/projects/mega-mill2.webp",
+    alt: "Mega Market Flour Mill Substation"
   },
   {
-    id: 'hillcrest-residential',
-    title: 'Hillcrest Residential Development',
-    category: 'Residential',
-    location: 'Hillcrest, Harare',
-    value: '$890K',
-    valueNumeric: 890000,
-    duration: '14 months',
-    completionDate: '10/03/2026',
-    status: 'Ongoing',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_18da01383-1766747476584.png",
-    alt: 'Luxury residential homes with modern architecture featuring white walls and large windows in suburban setting',
-    client: 'Hillcrest Properties Ltd',
-    description: 'Premium residential estate featuring 24 luxury homes with modern amenities, landscaped gardens, and community facilities. Incorporates sustainable design principles and energy-efficient systems.',
-    highlights: ['Luxury finishes', 'Smart home tech', 'Landscaped gardens', 'Energy efficient']
+    id: "2a",
+    title: "Mega Market Retaining Walls",
+    client: "Mega Market / Industrial Partner",
+    description: "Construction of substantial retaining walls to support site grading and infrastructure for the Mega Market complex, ensuring stability and proper drainage.",
+    category: "Civil Engineering",
+    location: "Mega Market Complex",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Apr - May 2022",
+    completionDate: "2022-05-31",
+    status: "Completed",
+    highlights: [
+      "Specialized civil engineering works",
+      "Rapid construction timeline",
+      "Critical support for overall site infrastructure"
+    ],
+    image: "/images/projects/retaining-walls.webp",
+    alt: "Mega Market Retaining Walls"
   },
   {
-    id: 'mining-infrastructure',
-    title: 'Alrosa Mining Infrastructure',
-    category: 'Industrial',
-    location: 'Marange, Zimbabwe',
-    value: '$2.1M',
-    valueNumeric: 2100000,
-    duration: '24 months',
-    completionDate: '30/06/2024',
-    status: 'Completed',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_17655c6ff-1766940937257.png",
-    alt: 'Heavy industrial mining facility with steel structures and processing equipment in open pit setting',
-    client: 'Alrosa Zimbabwe',
-    description: 'Comprehensive mining infrastructure project including processing facilities, administrative buildings, worker accommodation, and supporting civil works. Designed to withstand harsh industrial conditions.',
-    highlights: ['Heavy-duty design', 'Worker facilities', 'Processing plant', 'Safety systems']
+    id: "2b",
+    title: "Mega Market Storm Water Drainage",
+    client: "Mega Market / Industrial Partner",
+    description: "Installation of storm water drainage systems to manage runoff and prevent flooding at the Mega Market site, ensuring compliance with environmental and safety standards.",  
+    category: "Civil Engineering",
+    location: "Mega Market Complex",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Apr - May 2022",
+    completionDate: "2022-05-31",
+    status: "Completed",
+    highlights: [
+      "Effective storm water management solutions",
+      "Rapid installation timeline",
+      "Enhancement of site safety and environmental compliance"
+    ],
+    image: "/images/projects/storm-water-drain.webp",
+    alt: "Mega Market Storm Water Drainage"
   },
   {
-    id: 'government-office',
-    title: 'Government Office Complex',
-    category: 'Commercial',
-    location: 'Bulawayo, Zimbabwe',
-    value: '$1.3M',
-    valueNumeric: 1300000,
-    duration: '16 months',
-    completionDate: '15/12/2025',
-    status: 'Completed',
-    image: "https://images.unsplash.com/photo-1602917058415-d86121146559",
-    alt: 'Modern government office building with glass and concrete facade in urban commercial district',
-    client: 'Ministry of Infrastructure',
-    description: 'Multi-story government office complex with modern facilities, conference rooms, and public service areas. Features include advanced security systems, backup power, and accessible design.',
-    highlights: ['Security systems', 'Accessible design', 'Backup power', 'Modern facilities']
+    id: "2c",
+    title: "Mega Market Transport Yard",
+    client: "Mega Market / Industrial Partner",
+    description: "Development of a dedicated transport yard to facilitate logistics and vehicle movement for the Mega Market complex, enhancing operational efficiency.",
+    category: "Civil Engineering",
+    location: "Mega Market Complex",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Apr - May 2022",
+    completionDate: "2022-05-31",
+    status: "Completed",
+    highlights: [
+      "Optimized logistics infrastructure",
+    ],
+    image: "/images/projects/transport-yard.webp",
+    alt: "Mega Market Transport Yard"
   },
   {
-    id: 'school-expansion',
-    title: 'St. Mary\'s School Expansion',
-    category: 'Civil',
-    location: 'Gweru, Zimbabwe',
-    value: '$420K',
-    valueNumeric: 420000,
-    duration: '10 months',
-    completionDate: '05/01/2026',
-    status: 'Ongoing',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_129385bd6-1766060457018.png",
-    alt: 'Educational facility with modern classrooms and outdoor learning spaces surrounded by greenery',
-    client: 'St. Mary\'s School Board',
-    description: 'Expansion project including new classroom blocks, science laboratories, sports facilities, and administrative offices. Designed to accommodate 500 additional students with modern learning environments.',
-    highlights: ['Modern classrooms', 'Science labs', 'Sports facilities', 'Eco-friendly']
+    id: "2d",
+    title: "Mega Market Transport Yard Ablution",
+    client: "Mega Market / Industrial Partner",
+    description: "Construction of ablution facilities within the Mega Market transport yard, providing essential amenities for staff and drivers.",
+    category: "Commercial",
+    location: "Mega Market Complex",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Apr - May 2022",
+    completionDate: "2022-05-31",
+    status: "Completed",
+    highlights: [
+      "Essential staff amenities",
+    ],
+    image: "/images/projects/transport-yard-ablution.webp",
+    alt: "Mega Market Transport Yard Ablution"
+  },  
+  {
+    id: "3",
+    title: "Surrey Pie Shop Renovation",
+    client: "Surrey Group",
+    description: "Complete internal fit-out and exterior branding renovation of a retail food outlet, transitioning an existing space into a functional and branded deli shop.",
+    category: "Commercial",
+    location: "Mutare Depot (First Street)",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Jan - Mar 2024",
+    completionDate: "2024-03-31",
+    status: "Completed",
+    highlights: [
+      "Successful retail fit-out and branding",
+      "Fast-track project completion",
+      "Focus on customer-facing aesthetic"
+    ],
+    image: "/images/projects/surrey-pie.webp",
+    alt: "Surrey Pie Shop Renovation"
   },
   {
-    id: 'hotel-renovation',
-    title: 'Victoria Falls Hotel Renovation',
-    category: 'Commercial',
-    location: 'Victoria Falls, Zimbabwe',
-    value: '$780K',
-    valueNumeric: 780000,
-    duration: '12 months',
-    completionDate: '20/09/2024',
-    status: 'Completed',
-    image: "https://images.unsplash.com/photo-1631993034717-fc3a15d35796",
-    alt: 'Luxury hotel exterior with colonial architecture featuring white columns and manicured gardens',
-    client: 'Victoria Falls Hotels Group',
-    description: 'Comprehensive renovation of historic hotel property including guest rooms, restaurants, conference facilities, and recreational areas. Preserved heritage features while incorporating modern amenities.',
-    highlights: ['Heritage preservation', 'Luxury upgrades', 'Modern amenities', 'Landscaping']
+    id: "4",
+    title: "Troutbeck Timeshares Infrastructure",
+    client: "Hospitality/Leisure Developer",
+    description: "Construction and finishing work on residential/leisure units within a resort area, focusing on quality finishes suitable for the hospitality sector.",
+    category: "Residential",
+    location: "Troutbeck (Nyanga)",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Nov 2025",
+    completionDate: "2025-11-30",
+    status: "Ongoing",
+    highlights: [
+      "Resort/timeshare development experience",
+      "High-altitude construction environment"
+    ],
+    image: "/images/projects/times.webp",
+    alt: "Troutbeck Timeshares Infrastructure"
   },
   {
-    id: 'warehouse-facility',
-    title: 'Logistics Warehouse Complex',
-    category: 'Industrial',
-    location: 'Chitungwiza, Zimbabwe',
-    value: '$650K',
-    valueNumeric: 650000,
-    duration: '9 months',
-    completionDate: '28/02/2026',
-    status: 'Ongoing',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_13d7e05ba-1768082738298.png",
-    alt: 'Large industrial warehouse with steel frame construction and loading docks for logistics operations',
-    client: 'Zimbabwe Logistics Ltd',
-    description: 'Modern warehouse and distribution center with advanced material handling systems, cold storage facilities, and office spaces. Optimized for efficient logistics operations.',
-    highlights: ['Cold storage', 'Loading docks', 'Security systems', 'Office spaces']
+    id: "5",
+    title: "General Civil Works - Drainage & Foundations",
+    client: "Various",
+    description: "Execution of miscellaneous civil engineering tasks, including ground preparation, minor structural support, and drainage infrastructure.",
+    category: "Civil Engineering",
+    location: "Various",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Intermittent",
+    completionDate: "Not Specified",
+    status: "Ongoing",
+    highlights: [
+      "Versatility in handling diverse civil tasks",
+      "Experience with foundations and ground support systems"
+    ],
+    image: "/images/projects/other.webp",
+    alt: "General Civil Works - Drainage & Foundations"
   },
   {
-    id: 'medical-center',
-    title: 'Community Medical Center',
-    category: 'Commercial',
-    location: 'Masvingo, Zimbabwe',
-    value: '$920K',
-    valueNumeric: 920000,
-    duration: '15 months',
-    completionDate: '10/07/2024',
-    status: 'Completed',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_140394415-1767197730336.png",
-    alt: 'Modern medical facility with clean white exterior and emergency entrance in healthcare district',
-    client: 'Masvingo Health Authority',
-    description: 'Comprehensive medical facility including outpatient clinics, diagnostic centers, pharmacy, and emergency services. Designed to international healthcare standards with patient-centered layouts.',
-    highlights: ['Modern equipment', 'Emergency services', 'Patient-centered', 'Accessible']
-  }];
+    id: "6",
+    title: "In-House Plant & Equipment Mobilization",
+    client: "Internal Asset Showcase",
+    description: "Documentation of the company's internal fleet, confirming ownership and readiness of heavy machinery for industrial and civil projects.",
+    category: "Industrial",
+    location: "Equipment Yard",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "N/A",
+    completionDate: "Not Specified",
+    status: "Ongoing",
+    highlights: [
+      "Demonstrates internal capacity and control over resources",
+      "Showcase of heavy earth-moving equipment"
+    ],
+    image: "/images/projects/plant.webp",
+    alt: "In-House Plant & Equipment Mobilization"
+  },
+  {
+    id: "7",
+    title: "Padel Court Construction",
+    client: "Recreational Facility Developer",
+    description: "Construction of specialized sports facilities, focusing on padel courts, which require specific surface preparation and structural considerations.",
+    category: "Recreational",
+    location: "Various",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Intermittent",
+    completionDate: "Not Specified",
+    status: "Ongoing",
+    highlights: [
+      "Specialized sports facility construction",
+      "Experience with recreational infrastructure"
+    ],
+    image: "/images/projects/padel.webp",
+    alt: "Padel Court Construction"
+    
+  },
+  {
+    id: "8",
+    title: "Private Renovation Works",
+    client: "Various Private Clients",
+    description: "Execution of renovation and refurbishment projects for private residential and commercial clients, focusing on quality finishes and client satisfaction.",
+    category: "Residential/Commercial",
+    location: "Various",
+    value: "Undisclosed",
+    valueNumeric: 0,
+    duration: "Intermittent",
+    completionDate: "Not Specified",
+    status: "Ongoing",
+    highlights: [
+      "Diverse renovation experience",
+      "Client-focused project execution"
+    ],
+    image: "/images/projects/renovations.webp",
+    alt: "Private Renovation Works"
+  }
+];
 
 
   const featuredProjects: FeaturedProject[] = [
+  
   {
-    id: 'mega-market-harare',
-    title: 'Mega Market Harare - Commercial Excellence',
-    category: 'Commercial Construction',
-    value: '$1.6M',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_1d0d0e1ea-1767465126516.png",
-    alt: 'Panoramic view of completed Mega Market commercial complex with modern glass facade and bustling parking area',
-    description: 'Our flagship commercial project showcasing Six Nine Construction\'s capability to deliver large-scale retail infrastructure. The Mega Market Harare project transformed a vacant lot into a thriving commercial hub serving thousands of customers daily. This project exemplifies our commitment to quality, timely delivery, and client satisfaction.',
+    id: 'hillcrest-college-boys-hostel',
+    title: 'Hillcrest College Boys Hostel - Educational Infrastructure Upgrade',
+    category: 'Educational Infrastructure',
+    value: 'Undisclosed',
+    image: '/images/projects/hillcrest.webp',
+    alt: 'Hillcrest College Boys Hostel construction progress',
+    description: 'Our key project showcasing dedicated progress tracking and on-site delivery for the education sector. The Hillcrest College Boys Hostel project involved the construction or significant renovation of a large-scale student accommodation facility, documented meticulously through visual evidence. This project exemplifies our commitment to consistent documentation, structured site activity, and timely work progression.',
     achievements: [
-    'Delivered 2 weeks ahead of schedule despite challenging weather conditions',
-    'Achieved LEED Silver certification for sustainable building practices',
-    'Zero safety incidents throughout 18-month construction period',
-    'Implemented innovative structural solutions reducing costs by 12%',
-    'Created 150+ local employment opportunities during construction']
-
+      '11-week construction progress documented with photos and videos.',
+      '25 high-quality photos and 1 video captured for audit trail.',
+      'Consistent site activity and well-managed construction timeline.',
+      'Transitioned from foundation to near-completion in 3 months.'
+    ]
   },
   {
-    id: 'africa-university-maize',
-    title: 'Africa University Maize Milling - Industrial Innovation',
-    category: 'Industrial Construction',
-    value: '$256K',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_11967ec0f-1768235282816.png",
-    alt: 'Interior view of Africa University maize milling facility showing automated processing equipment and quality control systems',
-    description: 'A testament to our industrial construction expertise, this state-of-the-art maize milling facility combines educational functionality with commercial viability. Working closely with Africa University, we delivered a facility that serves as both a teaching resource and a revenue-generating asset for the institution.',
+    id: 'mega-market-flour-mill-substation',
+    title: 'Mega Market Flour Mill Substation - Critical Power Infrastructure',
+    category: 'Industrial Infrastructure',
+    value: 'Undisclosed',
+    image: '/images/projects/mega-mill.webp',
+    alt: 'Mega Market Flour Mill Substation construction progress',
+    description: 'Our specialized project demonstrating expertise in electrical power infrastructure development for large-scale industrial and commercial users. The Mega Market Flour Mill Substation project involved the construction and installation of a dedicated substation, ensuring high-capacity, stable power supply to a major facility (likely Mega Market and the associated flour mill). The comprehensive photographic record showcases methodical progress in civil works and electrical component installation. This project exemplifies our commitment to engineering precision and compliance with critical utility standards.',
     achievements: [
-    'Integrated automated processing systems with 95% efficiency rating',
-    'Designed flexible spaces accommodating both education and production',
-    'Completed within 8-month timeline with zero budget overruns',
-    'Implemented comprehensive safety protocols exceeding industry standards',
-    'Established quality control laboratories meeting international standards']
-
+      '52 files document progress from civil works to equipment installation.',
+      'Rapid civil works completion from April to May 2022.',
+      'Successful installation of critical equipment, including transformers.',
+      '10-week timeline from site prep to operational readiness.'
+    ]
   },
   {
-    id: 'alrosa-mining',
-    title: 'Alrosa Mining Infrastructure - Heavy Industrial Mastery',
-    category: 'Mining & Heavy Industrial',
-    value: '$2.1M',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_12d0793f0-1767080257287.png",
-    alt: 'Aerial view of Alrosa mining infrastructure showing processing facilities and worker accommodation in industrial setting',
-    description: 'Our largest and most complex project to date, the Alrosa Mining Infrastructure demonstrates Six Nine Construction\'s capability to handle multi-million dollar heavy industrial projects. This comprehensive development included processing facilities, administrative buildings, worker accommodation, and extensive civil works in challenging terrain.',
+    id: 'surrey-pie-shop-renovations',
+    title: 'Surrey Pie Shop Renovations - Retail Outlet Revitalization',
+    category: 'Retail Construction',
+    value: 'Undisclosed',
+    image: '/images/projects/surrey-pie-shop.webp',
+    alt: 'Surrey Pie Shop Renovations showcasing vibrant retail outlet',
+    description: 'Our focused project showcasing the transformation of an existing retail space into a vibrant and fully functional outlet for the Surrey Group. The Surrey Pie shop renovations project involved the internal and external upgrade of a pie deli shop, with documentation spanning from the initial construction phase to the final branding and operation readiness. This project exemplifies our commitment to high-quality finishing, adherence to client branding standards, and efficient retail build-out timelines.',
     achievements: [
-    'Successfully managed $2.1M budget with transparent financial reporting',
-    'Coordinated 200+ workers across multiple construction phases',
-    'Implemented advanced safety systems resulting in exemplary safety record',
-    'Delivered heavy-duty structures designed for 50+ year operational life',
-    'Completed extensive civil works including roads, drainage, and utilities']
-
+      'Photos document progress from construction to branding (Jan-Mar 2024).',
+      'Final exterior features Surrey branding and Mutare Depot details.',
+      'Interior progress includes framing, ceiling, and wall preparation.',
+      'Project transitioned to a ready-to-operate retail outlet.'
+    ]
   }];
 
 
@@ -393,7 +480,7 @@ export default function ProjectsPage() {
         <ProjectHero totalProjects={50} totalValue="$12M+" completionRate={98} />
         <FeaturedProjects projects={featuredProjects} />
         <ProjectsInteractive initialProjects={allProjects} />
-        <ProjectTimeline timeline={timeline} />
+        {/* <ProjectTimeline timeline={timeline} /> */}
         
         <ProjectStats stats={stats} />
         <ProjectCTA />

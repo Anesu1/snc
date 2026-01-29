@@ -13,6 +13,9 @@ export async function POST(req: Request) {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+       tls: {
+    rejectUnauthorized: false, // ✅ bypass self-signed chain
+  },
     });
 
     // Compose email
@@ -27,6 +30,6 @@ export async function POST(req: Request) {
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
+    return NextResponse.json({ error: `Failed to send email. ${error}` }, { status: 500 });
   }
 }

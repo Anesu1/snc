@@ -50,7 +50,7 @@ export default function ServiceCTA() {
                 <Icon name="DocumentTextIcon" size={20} />
                 <span>Get Free Quote</span>
               </button>
-              <button className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white bg-opacity-10 text-primary-foreground rounded-lg font-headline font-semibold border-2 border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300" onClick={() => window.location.href='tel:+263123456789'}>
+              <button className="inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white bg-opacity-10 text-primary-foreground rounded-lg font-headline font-semibold border-2 border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300" onClick={() => window.location.href='tel:+263771001750'}>
                 <Icon name="PhoneIcon" size={20} />
                 <span>Call Us Now</span>
               </button>
@@ -63,7 +63,7 @@ export default function ServiceCTA() {
                   <Icon name="PhoneIcon" size={20} className="opacity-80" />
                   <div>
                     <div className="text-xs opacity-70">Call Us</div>
-                    <div className="font-semibold">+263 123 456 789</div>
+                    <div className="font-semibold">+263 77 100 1750 / +263 77 100 1577 / 0202 065 845</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">

@@ -60,20 +60,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-60"></div>
 
         {/* Status Badge */}
-        <div className="absolute top-4 right-4">
-          <div
-            className={`flex items-center space-x-1 px-3 py-1 rounded-full bg-card text-xs font-semibold ${getStatusColor(
-              project.status
-            )}`}
-          >
-            <Icon
-              name={project.status.toLowerCase() === 'completed' ? 'CheckCircleIcon' : 'ClockIcon'}
-              size={14}
-              variant="solid"
-            />
-            <span>{project.status}</span>
-          </div>
-        </div>
+       
 
         {/* Category Badge */}
         <div className="absolute top-4 left-4">
@@ -84,12 +71,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Value Badge */}
-        <div className="absolute bottom-4 left-4">
-          <div className="flex items-center space-x-1 px-3 py-2 rounded-md bg-card text-accent text-sm font-headline font-bold">
-            <Icon name="CurrencyDollarIcon" size={16} variant="solid" />
-            <span>{project.value}</span>
-          </div>
-        </div>
+        
       </div>
 
       {/* Content */}
@@ -108,23 +90,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <p className="text-sm text-foreground opacity-80 mb-4 line-clamp-2">{project.description}</p>
 
         {/* Project Details Grid */}
-        <div className="grid grid-cols-2 gap-3 mb-4 pb-4 border-b border-border">
-          <div className="flex items-start space-x-2">
-            <Icon name="MapPinIcon" size={16} className="text-textSecondary mt-0.5 flex-shrink-0" />
-            <div>
-              <div className="text-xs text-textSecondary">Location</div>
-              <div className="text-sm font-medium text-foreground">{project.location}</div>
-            </div>
-          </div>
-
-          <div className="flex items-start space-x-2">
-            <Icon name="CalendarIcon" size={16} className="text-textSecondary mt-0.5 flex-shrink-0" />
-            <div>
-              <div className="text-xs text-textSecondary">Duration</div>
-              <div className="text-sm font-medium text-foreground">{project.duration}</div>
-            </div>
-          </div>
-        </div>
+       
 
         {/* Highlights */}
         <div className="mb-4">

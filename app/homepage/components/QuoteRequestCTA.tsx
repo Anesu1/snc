@@ -99,11 +99,11 @@ const QuoteRequestCTA = () => {
           {/* Contact Options */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm">
             <a
-              href="tel:+263123456789"
+              href="tel:+263771001750"
               className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
             >
               <Icon name="PhoneIcon" size={18} />
-              <span>+263 773 414 446</span>
+              <span>+263 77 100 1750 </span>
             </a>
             <a
               href="mailto:info@sncconstruction.co.zw"
