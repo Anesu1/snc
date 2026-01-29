@@ -57,7 +57,7 @@ const Header = () => {
           {/* Logo Section */}
           <Link href="/homepage" className="flex items-center space-x-3 group" onClick={closeMobileMenu}>
             <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
-              <Image src="/images/logo.png" alt="Six Nine Construction Logo" fill className="object-contain" />
+              <Image src="/images/logo.webp" alt="Six Nine Construction Logo" fill className="object-contain" />
             </div>
             <div className="hidden md:block">
               <div className="text-xl font-headline font-bold text-primary leading-tight">
