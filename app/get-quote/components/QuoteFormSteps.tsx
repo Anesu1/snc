@@ -723,7 +723,7 @@ const QuoteFormSteps = ({ onSubmit }: QuoteFormStepsProps) => {
         {/* Navigation Buttons */}
         <div className="flex flex-col gap-4 items-center justify-between mt-8 pt-6 border-t border-border">
           {submitSuccess ? (
-            <div className="text-success text-center font-semibold flex flex-col items-center">
+            <div className="text-white text-center font-semibold flex flex-col items-center">
               <Icon name="CheckCircleIcon" size={32} className="mb-2" />
               Your quote request has been sent! We'll be in touch soon.
             </div>

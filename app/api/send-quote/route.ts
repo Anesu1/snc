@@ -18,10 +18,13 @@ export async function POST(req: Request) {
   },
     });
 
+    const receiverEmail = process.env.QUOTE_RECEIVER_EMAIL || 'info@snc.co.zw';
+
     // Compose email
     const mailOptions = {
       from: `SNC Website <${process.env.SMTP_USER}>`,
-      to: process.env.QUOTE_RECEIVER_EMAIL || process.env.SMTP_USER,
+      to: receiverEmail,
+      replyTo: data?.email || undefined,
       subject: 'New Quote Request from SNC Website',
       text: JSON.stringify(data, null, 2),
       html: `<pre>${JSON.stringify(data, null, 2)}</pre>`

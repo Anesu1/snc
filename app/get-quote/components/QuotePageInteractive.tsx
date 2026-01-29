@@ -135,7 +135,7 @@ const QuotePageInteractive = () => {
             <div className="max-w-3xl mx-auto">
               <div className="bg-card rounded-lg p-8 md:p-12 shadow-construction text-center">
                 <div className="w-20 h-20 rounded-full bg-success bg-opacity-10 flex items-center justify-center mx-auto mb-6">
-                  <Icon name="CheckCircleIcon" size={48} className="text-success" />
+                  <Icon name="CheckCircleIcon" size={48} className="text-white" />
                 </div>
 
                 <h2 className="text-3xl font-headline font-bold text-foreground mb-4">
@@ -204,16 +204,16 @@ const QuotePageInteractive = () => {
                 </div>
 
                 <div className="bg-primary bg-opacity-5 rounded-lg p-6 mb-8">
-                  <h3 className="text-lg font-headline font-semibold text-foreground mb-3">
+                  <h3 className="text-lg font-headline font-semibold text-white mb-3">
                     Your Reference Number
                   </h3>
-                  <p className="text-3xl font-mono font-bold text-primary mb-2">
+                  <p className="text-3xl font-mono font-bold text-white mb-2">
                     SNC-{new Date().getFullYear()}-
                     {Math.floor(Math.random() * 10000)
                       .toString()
                       .padStart(4, '0')}
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-white">
                     Please save this reference number for future correspondence
                   </p>
                 </div>
