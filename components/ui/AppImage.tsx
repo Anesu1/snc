@@ -40,6 +40,13 @@ function AppImage({
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
+    React.useEffect(() => {
+        setImageSrc(src);
+        setHasError(false);
+        // Reset loading state if src changes
+        setIsLoading(true);
+    }, [src]);
+
     // More reliable external URL detection
     const isExternal = imageSrc.startsWith('http://') || imageSrc.startsWith('https://');
     const isLocal = imageSrc.startsWith('/') || imageSrc.startsWith('./') || imageSrc.startsWith('data:');

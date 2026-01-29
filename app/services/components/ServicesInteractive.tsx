@@ -145,7 +145,7 @@ export default function ServicesInteractive() {
   {
     name: 'Excavator CAT 320',
     category: 'Earthmoving',
-    image: "https://images.unsplash.com/photo-1689596312049-0a21da693515",
+    image: "/images/services/service1.webp",
     imageAlt: 'Yellow CAT excavator with extended arm and bucket on construction site with dirt and gravel',
     specs: [
     'Operating weight: 20 tons',
@@ -158,7 +158,7 @@ export default function ServicesInteractive() {
   {
     name: 'Bulldozer D6T',
     category: 'Earthmoving',
-    image: "https://images.unsplash.com/photo-1603814744174-115311ad645e",
+    image: "/images/services/service2.webp",
     imageAlt: 'Heavy-duty yellow bulldozer with large blade on construction terrain with dirt and rocks',
     specs: [
     'Operating weight: 18 tons',
@@ -171,7 +171,7 @@ export default function ServicesInteractive() {
   {
     name: 'Wheel Loader 950',
     category: 'Material Handling',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_194ab642e-1766743936291.png",
+    image: "/images/services/service3.webp",
     imageAlt: 'Yellow wheel loader with large front bucket on construction site ready for material handling',
     specs: [
     'Bucket capacity: 2.5 m³',

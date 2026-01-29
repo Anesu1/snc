@@ -19,7 +19,8 @@ export default function ServiceComparison({ features }: ServiceComparisonProps) 
       description: 'Essential construction services for small-scale projects',
       color: 'bg-muted',
       textColor: 'text-foreground',
-      icon: 'HomeIcon'
+      icon: 'HomeIcon',
+      featureKey: 'basic' as const
     },
     {
       name: 'Standard',
@@ -28,7 +29,8 @@ export default function ServiceComparison({ features }: ServiceComparisonProps) 
       color: 'bg-primary',
       textColor: 'text-primary-foreground',
       icon: 'BuildingOfficeIcon',
-      popular: true
+      popular: true,
+      featureKey: 'standard' as const
     },
     {
       name: 'Premium',
@@ -36,7 +38,8 @@ export default function ServiceComparison({ features }: ServiceComparisonProps) 
       description: 'Full-service excellence for large-scale projects',
       color: 'bg-accent',
       textColor: 'text-accent-foreground',
-      icon: 'BuildingLibraryIcon'
+      icon: 'BuildingLibraryIcon',
+      featureKey: 'premium' as const
     }
   ];
 
@@ -56,8 +59,63 @@ export default function ServiceComparison({ features }: ServiceComparisonProps) 
           </p>
         </div>
 
-        {/* Comparison Table */}
-        <div className="overflow-x-auto">
+        {/* Mobile View: Cards */}
+        <div className="block md:hidden space-y-8">
+          {packages.map((pkg, index) => (
+            <div key={index} className="bg-card rounded-2xl shadow-construction overflow-hidden border border-border">
+              {/* Card Header */}
+              <div className={`p-6 ${pkg.color} ${pkg.popular ? 'relative' : ''}`}>
+                {pkg.popular && (
+                  <div className="absolute top-4 right-4">
+                    <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold rounded-full shadow-sm">
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className={`p-3 bg-white bg-opacity-20 rounded-xl`}>
+                    <Icon name={pkg.icon as any} size={24} className={pkg.textColor} />
+                  </div>
+                  <h3 className={`text-2xl font-headline font-bold ${pkg.textColor}`}>{pkg.name}</h3>
+                </div>
+                <div className={`text-3xl font-headline font-bold ${pkg.textColor} mb-2`}>{pkg.price}</div>
+                <p className={`text-sm ${pkg.textColor} opacity-90`}>{pkg.description}</p>
+              </div>
+
+              {/* Card Features */}
+              <div className="p-6 bg-card">
+                <h4 className="font-headline font-bold text-foreground mb-4 border-b border-border pb-2">Included Features</h4>
+                <ul className="space-y-3">
+                  {features.map((feature, fIndex) => {
+                    const isIncluded = feature[pkg.featureKey as keyof typeof feature]; // Access using featureKey
+                    if (typeof isIncluded !== 'boolean') return null; // Safety check
+
+                    return (
+                      <li key={fIndex} className="flex items-start justify-between">
+                        <span className={`text-sm ${isIncluded ? 'text-foreground font-medium' : 'text-muted-foreground'}`}>
+                          {feature.name}
+                        </span>
+                        {isIncluded ? (
+                          <Icon name="CheckCircleIcon" size={20} className="text-success flex-shrink-0 ml-2" />
+                        ) : (
+                          <Icon name="XCircleIcon" size={20} className="text-muted-foreground opacity-30 flex-shrink-0 ml-2" />
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+                <div className="mt-6 pt-6 border-t border-border">
+                  <button className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-headline font-semibold shadow-sm hover:shadow-md transition-all">
+                    Choose {pkg.name}
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop View: Table */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full bg-card rounded-2xl shadow-construction overflow-hidden">
             <thead>
               <tr className="border-b border-border">

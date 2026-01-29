@@ -25,8 +25,12 @@ interface ProjectsInteractiveProps {
   initialProjects: Project[];
 }
 
+import ProjectModal from './ProjectModal';
+
 export default function ProjectsInteractive({ initialProjects }: ProjectsInteractiveProps) {
   const [isHydrated, setIsHydrated] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(initialProjects);
   const [displayCount, setDisplayCount] = useState(6);
 
@@ -134,10 +138,23 @@ export default function ProjectsInteractive({ initialProjects }: ProjectsInterac
           {filteredProjects.length > 0 ? (
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                {filteredProjects.slice(0, displayCount).map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+                {filteredProjects.slice(0, displayCount).map((project: any) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    onClick={() => {
+                      setSelectedProject(project);
+                      setIsModalOpen(true);
+                    }}
+                  />
                 ))}
               </div>
+
+              <ProjectModal
+                project={selectedProject}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+              />
 
               {/* Load More Button */}
               {displayCount < filteredProjects.length && (

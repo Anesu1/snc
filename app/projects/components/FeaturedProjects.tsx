@@ -42,9 +42,8 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`flex flex-col ${
-                index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-              } gap-8 items-center bg-card rounded-lg overflow-hidden shadow-construction hover:shadow-construction-lg transition-all duration-500`}
+              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                } gap-8 items-center bg-card rounded-lg overflow-hidden shadow-construction hover:shadow-construction-lg transition-all duration-500`}
             >
               {/* Image Section */}
               <div className="w-full lg:w-1/2 h-96 relative overflow-hidden group">
@@ -54,7 +53,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-40"></div>
-                
+
                 {/* Value Badge */}
                 <div className="absolute bottom-6 left-6">
                   <div className="flex items-center space-x-2 px-4 py-3 rounded-lg bg-card shadow-construction">
@@ -101,7 +100,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                 </div>
 
                 {/* CTA Button */}
-               
+
               </div>
             </div>
           ))}
