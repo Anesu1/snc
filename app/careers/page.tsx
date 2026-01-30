@@ -9,83 +9,83 @@ export const metadata: Metadata = {
     "Explore open roles at Six Nine Construction. Join our teams in project delivery, engineering, and operations to help build Zimbabwe's future.",
 };
 
-const roles = [
-  {
-    title: 'Site Engineer',
-    department: 'Project Delivery',
-    location: 'Mutare, Zimbabwe',
-    type: 'Full-time',
-    level: 'Mid-level',
-    summary:
-      'Lead daily site execution, coordinate subcontractors, and drive quality and safety standards on commercial builds.',
-    responsibilities: [
-      'Coordinate site teams, subcontractors, and suppliers to maintain schedule.',
-      'Track materials, equipment, and work progress with daily reporting.',
-      'Enforce safety procedures and quality inspections on all work fronts.',
-    ],
-    requirements: [
-      'BSc in Civil Engineering or Construction Management.',
-      '3+ years of site supervision experience.',
-      'Strong knowledge of local building codes and HSE practices.',
-    ],
-  },
-  {
-    title: 'Quantity Surveyor',
-    department: 'Commercial',
-    location: 'Mutare, Zimbabwe',
-    type: 'Full-time',
-    level: 'Mid-level',
-    summary:
-      'Own project cost control, tender preparation, and contract administration across multiple work packages.',
-    responsibilities: [
-      'Prepare BOQs, cost plans, and tender submissions.',
-      'Monitor project costs, variations, and procurement spend.',
-      'Support client reporting and contractor evaluations.',
-    ],
-    requirements: [
-      'BSc in Quantity Surveying or related field.',
-      '3+ years in construction cost management.',
-      'Strong Excel and contract administration skills.',
-    ],
-  },
-  {
-    title: 'Health & Safety Officer',
-    department: 'Operations',
-    location: 'Mutare, Zimbabwe',
-    type: 'Full-time',
-    level: 'Senior',
-    summary:
-      'Champion safety compliance, conduct audits, and lead safety training across project sites.',
-    responsibilities: [
-      'Run safety inductions, toolbox talks, and site inspections.',
-      'Investigate incidents and maintain compliance documentation.',
-      'Collaborate with site leadership to reduce risk exposure.',
-    ],
-    requirements: [
-      'Recognized HSE certification and 5+ years site experience.',
-      'Knowledge of ISO 45001 or similar standards.',
-      'Confident communicator with strong reporting discipline.',
-    ],
-  },
-  {
-    title: 'Graduate Engineer (Internship)',
-    department: 'Engineering',
-    location: 'Mutare, Zimbabwe',
-    type: 'Internship',
-    level: 'Entry',
-    summary:
-      'Join active project teams to learn planning, site coordination, and construction best practices.',
-    responsibilities: [
-      'Support site engineers with measurements and progress reports.',
-      'Assist with QA checks and drawing revisions.',
-      'Learn procurement and material tracking workflows.',
-    ],
-    requirements: [
-      'Final year or recent graduate in Civil Engineering.',
-      'Strong willingness to learn on-site processes.',
-      'Good communication and team collaboration.',
-    ],
-  },
+const roles:any[] = [
+  // {
+  //   title: 'Site Engineer',
+  //   department: 'Project Delivery',
+  //   location: 'Mutare, Zimbabwe',
+  //   type: 'Full-time',
+  //   level: 'Mid-level',
+  //   summary:
+  //     'Lead daily site execution, coordinate subcontractors, and drive quality and safety standards on commercial builds.',
+  //   responsibilities: [
+  //     'Coordinate site teams, subcontractors, and suppliers to maintain schedule.',
+  //     'Track materials, equipment, and work progress with daily reporting.',
+  //     'Enforce safety procedures and quality inspections on all work fronts.',
+  //   ],
+  //   requirements: [
+  //     'BSc in Civil Engineering or Construction Management.',
+  //     '3+ years of site supervision experience.',
+  //     'Strong knowledge of local building codes and HSE practices.',
+  //   ],
+  // },
+  // {
+  //   title: 'Quantity Surveyor',
+  //   department: 'Commercial',
+  //   location: 'Mutare, Zimbabwe',
+  //   type: 'Full-time',
+  //   level: 'Mid-level',
+  //   summary:
+  //     'Own project cost control, tender preparation, and contract administration across multiple work packages.',
+  //   responsibilities: [
+  //     'Prepare BOQs, cost plans, and tender submissions.',
+  //     'Monitor project costs, variations, and procurement spend.',
+  //     'Support client reporting and contractor evaluations.',
+  //   ],
+  //   requirements: [
+  //     'BSc in Quantity Surveying or related field.',
+  //     '3+ years in construction cost management.',
+  //     'Strong Excel and contract administration skills.',
+  //   ],
+  // },
+  // {
+  //   title: 'Health & Safety Officer',
+  //   department: 'Operations',
+  //   location: 'Mutare, Zimbabwe',
+  //   type: 'Full-time',
+  //   level: 'Senior',
+  //   summary:
+  //     'Champion safety compliance, conduct audits, and lead safety training across project sites.',
+  //   responsibilities: [
+  //     'Run safety inductions, toolbox talks, and site inspections.',
+  //     'Investigate incidents and maintain compliance documentation.',
+  //     'Collaborate with site leadership to reduce risk exposure.',
+  //   ],
+  //   requirements: [
+  //     'Recognized HSE certification and 5+ years site experience.',
+  //     'Knowledge of ISO 45001 or similar standards.',
+  //     'Confident communicator with strong reporting discipline.',
+  //   ],
+  // },
+  // {
+  //   title: 'Graduate Engineer (Internship)',
+  //   department: 'Engineering',
+  //   location: 'Mutare, Zimbabwe',
+  //   type: 'Internship',
+  //   level: 'Entry',
+  //   summary:
+  //     'Join active project teams to learn planning, site coordination, and construction best practices.',
+  //   responsibilities: [
+  //     'Support site engineers with measurements and progress reports.',
+  //     'Assist with QA checks and drawing revisions.',
+  //     'Learn procurement and material tracking workflows.',
+  //   ],
+  //   requirements: [
+  //     'Final year or recent graduate in Civil Engineering.',
+  //     'Strong willingness to learn on-site processes.',
+  //     'Good communication and team collaboration.',
+  //   ],
+  // },
 ];
 
 const benefits = [
@@ -223,7 +223,7 @@ export default function CareersPage() {
             </div>
 
             <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              {roles.map((role) => (
+              {roles.length > 0 ? roles.map((role) => (
                 <div
                   key={role.title}
                   className="bg-card border border-border rounded-2xl p-6 shadow-construction hover:shadow-construction-lg transition-all duration-300"
@@ -287,7 +287,11 @@ export default function CareersPage() {
                     </span>
                   </div>
                 </div>
-              ))}
+              )): (
+                <div className="text-center py-12">
+                  <p className="text-lg text-textSecondary">No open roles at the moment.</p>
+                </div>
+              )}
             </div>
           </div>
         </section>
