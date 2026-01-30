@@ -64,7 +64,7 @@ export default function ProjectCTA() {
                 className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-200"
               >
                 <Icon name="EnvelopeIcon" size={20} />
-                <span>cosmas@snc.co.zw</span>
+                <span>sales@snc.co.zw</span>
               </a>
             </div>
           </div>

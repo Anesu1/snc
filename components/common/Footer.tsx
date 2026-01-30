@@ -102,7 +102,7 @@ const Footer = () => {
                 className="flex items-center space-x-2 hover:text-accent transition-colors duration-200"
               >
                 <Icon name="EnvelopeIcon" size={18} />
-                <span>info@snc.co.zw / cosmas@snc.co.zw</span>
+                <span>info@snc.co.zw / sales@snc.co.zw</span>
               </a>
               <div className="flex items-start space-x-2">
                 <Icon name="MapPinIcon" size={18} className="mt-0.5 flex-shrink-0" />
